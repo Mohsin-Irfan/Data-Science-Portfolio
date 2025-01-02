@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohsin Irfan</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0);
+        background-size: 300% 300%;
+        animation: gradientBG 15s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    nav {
+                display: flex;
+                justify-content: center;
+                background-color: black;
+                padding: 20px 0;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000; /* Ensure the navbar stays on top */
+                box-shadow: 0 8px 6px -6px rgba(3, 0, 0, 0.308); /* Shadow effect */
+                transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    
+            }
+    
+            nav a {
+                color: lightgray; /* Dark text color */
+                text-decoration: none;
+                padding: 14px 20px;
+                font-size: 18px;
+                transition: color 0.3s;
+            }
+    
+    .hero-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        margin-top: 56px; /* Adjusted to prevent content from being hidden under the navbar */
+    
+    }
+    
+    .hero-container h1 {
+        font-size: 4em;
+        margin: 0;
+    }
+    
+    .hero-container p {
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+    
+            /* About Section CSS */
+            .about-section {
+                padding: 60px 0;
+                background-color: #f4f4f4;
+                text-align: center;
+                color: #333;
+            }
+    
+            .about-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+    
+            .about-section img {
+                width: 200px; 
+                height: 200px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+            }
+    
+            .about-section p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+      /* Additional CSS for Projects Section */
+      .projects-section h2 {
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+      }
+      .projects-section .card {
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+      }
+      .projects-section .card-img-top {
+        max-height: 180px; /* Adjust this value to fit the image properly in the card */
+        object-fit: cover; /* This makes sure the image covers the area properly */
+      }
+      .projects-section .card-body {
+        padding: 15px;
+      }
+      .projects-section .card-title {
+        font-size: 1.25rem;
+      }
+      .projects-section .card-text {
+        margin-bottom: 15px;
+      }
+    
+      /* Additional CSS for Skills Section */
+      .skills-section {
+        background-color: #f8f9fa; /* Background color for skills section */
+        padding: 50px 0;
+      }
+      .skills-section h2 {
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+      }
+      .skills-section .card {
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .skills-section .card-img-top {
+        padding: 20px; /* Add padding around your images if needed */
+        height: 180px; /* Fixed height for consistency */
+        object-fit: contain; /* This will make sure the image is scaled properly within the container */
+      }
+      .skills-section .card-body {
+        padding: 15px;
+      }
+      .skills-section .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+      }
+      .skills-section .btn-outline-primary {
+        color: #007bff;
+        border-color: #007bff;
+      }
+      .skills-section .btn-outline-primary:hover {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      
+    /* Additional CSS for Contact Section */
+    .contact-section {
+      padding: 50px 0;
+    }
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .contact-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .social-icon {
+      width: 50px; /* Size of your icons */
+      margin-bottom: 10px;
+    }
+    /* Hover effect for icons */
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+    /* Style for links in the Contact section */
+    .contact-section a {
+      color: #fff;
+      text-decoration: none; /* Removes underline from links */
+      display: inline-block; /* Allows for margin on the bottom */
+      margin-bottom: 10px;
+    }
+    .contact-section a:hover {
+      color: #ddd; /* Color when hovering over the link */
+    }
+    
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+</style>
+
+</head>
+<body>
+    <nav>
+        <a href="#home"><b>Home</b></a>
+        <a href="#about"><b>About</b></a>
+        <a href="https://www.linkedin.com/in/mohsinirfan1"><b>LinkedIn</b></a>
+        <a href="https://github.com/Mohsin-Irfan"><b>Github</b></a>
+        <a href="#projects"><b>Projects</b></a>
+        <a href="#showcase"><b>Showcase</b></a>
+        <a href="#skills"><b>Skills</b></a>
+        <a href="mailto:mohsinirfan2728@gmail.com"><b>Chat with me</b></a>
+    </nav>
+    <section id="home" class="home-section">
+      <div class="hero-container">
+          <div>
+              <h1><b>Mohsin Irfan</b></h1>
+              <p><b>Data Scientist & Data Analyst</b></p>
+          </div>
+      </div>
+    </section>
+
+<section id='about' class="about-section">
+  <div class="container">
+    <h2>About</h2>
+    <img src="images/about/1.jpg" alt="About Me">
+    <p>Hello! I'm Mohsin Irfan, a passionate and innovative software developer and data scientist with a strong foundation in Python, machine learning, and full-stack development. I specialize in creating intelligent applications that leverage the power of data to enhance user experiences.</p>
+    <p>With expertise in building scalable systems, data preprocessing, model development, and integration of advanced machine learning algorithms, I have successfully developed projects across a wide range of domains, including recommendation systems, AI-based applications, and web development.</p>
+    <p>I am also skilled in tools like Power BI, Tableau, and Excel, creating compelling dashboards and reports for data-driven decision-making. My experience includes working with frameworks like Flask for API development and creating immersive solutions like virtual try-ons.</p>
+    <p>I thrive on solving complex problems, adapting to new challenges, and continuously learning to stay ahead in this ever-evolving field. If you're interested in collaborating on a project or want to explore how data and AI can transform your business, feel free to reach out!</p> 
+  </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light" id="projects">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+    <!-- Project 1 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/movie.jpg" class="card-img-top" alt="Movie Recommender System">
+            <div class="card-body">
+                <h5 class="card-title">CineVerse: Movie Recommender System</h5>
+                <p class="card-text">CineVerse is a personalized movie recommendation system that suggests films based on user preferences by leveraging machine learning algorithms and content-based filtering techniques for enhanced viewing experiences.</p>
+                <a href="project1.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Movie-Recommender" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+      
+    <!-- Project 2 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/mall.jpg" class="card-img-top" alt="Mall Customer Segmentation">
+            <div class="card-body">
+                <h5 class="card-title">Mall Customer Segmentation</h5>
+                <p class="card-text">Mall Customer Segmentation is a data-driven project utilizing clustering algorithms to analyze and segment mall customers based on purchasing behavior, enabling targeted marketing strategies and personalized shopping experiences for enhanced satisfaction.</p>
+                <!-- Link to the full content page -->
+                <a href="project2.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Mall-Customer-Segmentation" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+        <img src="images/projects/data.jpg" class="card-img-top" alt="Project 3">
+        <div class="card-body">
+            <h5 class="card-title">DataWiz Pro: All-in-One Data Analytics App</h5>
+            <p class="card-text">
+            DataWiz Pro is a comprehensive tool designed to help users seamlessly upload, clean, and visualize data with intelligent automation. It also integrates machine learning models to predict outcomes and transform data into meaningful insights.
+            </p>
+            <!-- Link to the full content page -->
+            <a href="project3.html" class="btn btn-primary">Discover More</a>
+            <a href="https://github.com/Mohsin-Irfan/DataWiz-Pro" class="btn btn-secondary" target="_blank">Source Code</a>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Project 4 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/face.jpg" class="card-img-top" alt="Face Attendance">
+            <div class="card-body">
+                <h5 class="card-title">Face Attendance</h5>
+                <p class="card-text">Face Attendance is a biometric-based system using advanced facial recognition technology to automatically mark attendance, ensuring accuracy, reducing manual errors, and improving efficiency for organizations and schools.</p>
+                <!-- Link to the full content page -->
+                <a href="project4.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Face-Attendance" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+          
+    <!-- Project 5 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/project.jpg" class="card-img-top" alt="Project Management Tool">
+            <div class="card-body">
+                <h5 class="card-title">Project Management Tool</h5>
+                <p class="card-text">
+                    A dynamic tool designed to streamline team collaboration, task management, and project tracking while fostering accountability, ensuring timely completion of objectives, boosting overall productivity, and enhancing effective communication and coordination across teams.</p>
+                <!-- Link to the full content page -->
+                <a href="project5.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Project-Management-Tool" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Project 6 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/banking.jpg" class="card-img-top" alt="Banking System">
+            <div class="card-body">
+                <h5 class="card-title">Banking System</h5>
+                <p class="card-text">
+                    The Banking System is a web-based application that allows users to manage accounts, make transactions, and view balances securely. It simulates core banking functions with a focus on security and user-friendly features.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project6.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Banking-System" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 7 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/ecommerce.png" class="card-img-top" alt="Ecommerce Purchase Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Ecommerce Purchase Analysis</h5>
+                <p class="card-text">
+                    Ecommerce Purchase Analysis provides insights into customer purchasing behaviors by analyzing transaction data. This project helps businesses identify trends, optimize inventory, and improve marketing strategies.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project7.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/E-commerce-Purchase-Data-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+      
+    <!-- Project 8 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/result.jpg" class="card-img-top" alt="Mall Customer Segmentation">
+            <div class="card-body">
+                <h5 class="card-title">Student Result Analysis</h5>
+                <p class="card-text">Student Result Analysis provides insights into academic performance trends, helping institutions and students identify strengths, weaknesses, and areas for improvement through analysis and visualizations.</p>
+                <!-- Link to the full content page -->
+                <a href="project8.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Student-Result-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 9 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/games.jpg" class="card-img-top" alt="Popular Video Games Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Popular Video Games Analysis</h5>
+                <p class="card-text">
+                    Popular Video Games Analysis helps identify gaming trends, user preferences, and platform popularity through data analysis, providing valuable insights for developers and marketers.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project9.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Popular-Video-Games-Data-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Project 10 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/salaries.jpg" class="card-img-top" alt="Salaries Data Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Salaries Data Analysis</h5>
+                <p class="card-text">
+                    Salaries Data Analysis provides insights into salary trends, helping organizations and individuals make informed decisions regarding compensation and industry benchmarks.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project10.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Salaries-Data-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+          
+    <!-- Project 11 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/mental_health.jpg" class="card-img-top" alt="Mental Health Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Mental Health Analysis</h5>
+                <p class="card-text">
+                    Mental Health Analysis examines factors affecting mental health, providing insights to identify issues and promote mental well-being using data-driven analytics and predictive modeling techniques.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project11.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Mental-Health-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 12 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/titanic.png" class="card-img-top" alt="Titanic Data Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Titanic Data Analysis</h5>
+                <p class="card-text">
+                    Titanic Data Analysis explores survival patterns from the Titanic disaster using exploratory data analysis and visualizations to uncover insights into passenger demographics and survival determinants.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project12.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Titanic-Data-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 13 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/covid.png" class="card-img-top" alt="Covid-19 Data Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Covid-19 Data Analysis</h5>
+                <p class="card-text">
+                    Covid-19 Data Analysis uncovers pandemic trends, impacts, and patterns by leveraging advanced analytics and visualizations on global Covid-19 datasets.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project13.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Covid-19-Data-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Project 14 -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="images/projects/police.png" class="card-img-top" alt="Police Report Analysis">
+            <div class="card-body">
+                <h5 class="card-title">Police Report Analysis</h5>
+                <p class="card-text">
+                    Police Report Analysis explores crime trends, patterns, and insights, supporting law enforcement in making informed decisions for enhanced public safety through data-driven analysis and visualizations.
+                </p>
+                <!-- Link to the full content page -->
+                <a href="project14.html" class="btn btn-primary">Discover More</a>
+                <a href="https://github.com/Mohsin-Irfan/Police-Data-Analysis" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Power BI Templates Section -->
+    <section id="showcase" class="projects-section bg-light">
+        <div class="container">
+            <h2 class="text-center animate__animated animate__fadeInUp"><b>Data Insights Showcase</b></h2>
+            <div class="row">
+                <!-- Template 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+                        <img src="images/powerbi/1.jpg" class="card-img-top" alt="Template 1">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>E-Commerce Sales Dashboard</b></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Template 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="images/powerbi/2.jpg" class="card-img-top" alt="Template 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Employees Analytics Dashboard</b></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Template 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+                        <img src="images/powerbi/3.jpg" class="card-img-top" alt="Template 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Sales Analysis Dashboard</b></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Template 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-4s">
+                        <img src="images/powerbi/4.jpg" class="card-img-top" alt="Template 4">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Stock Analysis Dashboard</b></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Template 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-5s">
+                        <img src="images/powerbi/5.jpg" class="card-img-top" alt="Template 5">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Fraud Transactions Dashboard</b></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="text-center animate__animated animate__fadeInUp"><b>Skills</b></h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+                        <img src="images/skills/1.png" class="card-img-top" alt="Skill 1">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Python</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="images/skills/5.png" class="card-img-top" alt="Skill 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Numpy</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+                        <img src="images/skills/6.png" class="card-img-top" alt="Skill 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Pandas</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+                        <img src="images/skills/8.jpeg" class="card-img-top" alt="Skill 1">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Data Analysis</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="images/skills/2.png" class="card-img-top" alt="Skill 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Data Visualization</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+                        <img src="images/skills/7.jpeg" class="card-img-top" alt="Skill 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Web Scraping</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="images/skills/10.jpeg" class="card-img-top" alt="Skill 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>API Development</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+                        <img src="images/skills/9.png" class="card-img-top" alt="Skill 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Flask</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+                        <img src="images/skills/11.jpeg" class="card-img-top" alt="Skill 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Microsoft PowerBI</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="images/skills/13.png" class="card-img-top" alt="Skill 5">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Selenium</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+                        <img src="images/skills/14.png" class="card-img-top" alt="Skill 6">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Machine Learning</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="images/skills/16.png" class="card-img-top" alt="Skill 8">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Data Preprocessing</b></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+  <section id="contact" class="contact-section bg-dark text-white">
+    <div class="container">
+        <h2 class="text-center animate__animated animate__fadeInUp"><b>Contact</b></h2>
+        <p class="text-center animate__animated animate__fadeInUp animate__delay-1s">Feel free to reach out to me through the following channels:</p>
+        <div class="text-center">
+            <a href="https://www.linkedin.com/in/mohsinirfan1" target="_blank" class="animate__animated animate__fadeInUp animate__delay-2s mr-3">
+                <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/Mohsin-Irfan" target="_blank" class="animate__animated animate__fadeInUp animate__delay-3s mr-3">
+                <img src="icons/github.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="mailto:mohsinirfan2728@gmail.com" class="animate__animated animate__fadeInUp animate__delay-4s mr-3">
+                <img src="icons/gmail.png" alt="Email" class="social-icon">
+            </a>
+        </div>
+        <div class="mt-4 text-center">
+            &copy; 2025 Mohsin Irfan. All rights reserved.
+        </div>
+    </div>
+  </section>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
